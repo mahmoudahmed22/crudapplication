@@ -1,0 +1,21 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+</head>
+<body align="center">
+<form style="width: 400px;text-align: center; margin: auto;background-color: darkorange" method="POST" class="post-form" action="/update/{{employee.id}}">
+        {% csrf_token %}
+    <h3>Update Details</h3>
+      {{form|crispy}}
+    <button type="submit" class="btn btn-success">Update</button>
+
+</form>
+</body>
+</html>

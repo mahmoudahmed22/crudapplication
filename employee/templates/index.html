@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.js' %}"/>
+
+</head>
+<body>
+<form  style="width: 400px;text-align: center; margin: auto;background-color:#1c7430;color:wheat" method="POST" action="/emp">
+        {% csrf_token %}
+     <h3>Enter Details</h3>
+        {{ form|crispy }}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<script src="{%static 'js/jquery-3.2.1.js'%}"></script>
+<script src="{%static 'js/bootstrap.js'%}"></script>
+
+</body>
+</html>
